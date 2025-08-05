@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SD Negeri 2 Pandan</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+
+<link href="assets/css/style.css" rel="stylesheet"/><script src="assets/js/script.js"></script></head>
+<body class="bg-white min-h-screen">
+<!-- Header -->
+<header class="nav-modern shadow-2xl sticky top-0 z-50">
+<div class="container mx-auto px-4">
+<div class="flex items-center justify-between py-4">
+<!-- Logo & School Name -->
+<div class="flex items-center space-x-4">
+<div class="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center float pulse-slow shadow-lg">
+<i class="fas fa-graduation-cap text-white text-2xl" id="school-logo"></i>
+</div>
+<div>
+<h1 class="text-2xl font-bold text-gradient">SD Negeri 2 Pandan</h1>
+<p class="text-sm text-gray-600 font-medium" id="school-motto">Mencerdaskan Generasi Bangsa</p>
+</div>
+</div>
+<!-- Navigation Menu -->
+<nav class="hidden lg:flex space-x-2">
+<a class="nav-link nav-link-modern nav-link-beranda text-gray-700" href="#" onclick="showPage('beranda')">
+<span class="nav-text-animate">
+<span>🏠</span>
+<span>B</span><span>e</span><span>r</span><span>a</span><span>n</span><span>d</span><span>a</span>
+</span>
+</a>
+<a class="nav-link nav-link-modern nav-link-profil text-gray-700" href="#" onclick="showPage('profil')">
+<span class="nav-text-animate">
+<span>🏫</span>
+<span>P</span><span>r</span><span>o</span><span>f</span><span>i</span><span>l</span>
+</span>
+</a>
+<a class="nav-link nav-link-modern nav-link-agenda text-gray-700" href="#" onclick="showPage('agenda')">
+<span class="nav-text-animate">
+<span>📅</span>
+<span>A</span><span>g</span><span>e</span><span>n</span><span>d</span><span>a</span>
+</span>
+</a>
+<a class="nav-link nav-link-modern nav-link-informasi text-gray-700" href="#" onclick="showPage('informasi')">
+<span class="nav-text-animate">
+<span>📢</span>
+<span>I</span><span>n</span><span>f</span><span>o</span><span>r</span><span>m</span><span>a</span><span>s</span><span>i</span>
+</span>
+</a>
+<a class="nav-link nav-link-modern nav-link-galeri text-gray-700" href="#" onclick="showPage('galeri')">
+<span class="nav-text-animate">
+<span>🖼️</span>
+<span>G</span><span>a</span><span>l</span><span>e</span><span>r</span><span>i</span>
+</span>
+</a>
+<a class="nav-link nav-link-modern nav-link-guru text-gray-700" href="#" onclick="showPage('guru')">
+<span class="nav-text-animate">
+<span>👨‍🏫</span>
+<span>G</span><span>u</span><span>r</span><span>u</span>
+</span>
+</a>
+<a class="nav-link nav-link-modern nav-link-spmb text-gray-700" href="#" onclick="showPage('spmb')">
+<span class="nav-text-animate">
+<span>📝</span>
+<span>S</span><span>P</span><span>M</span><span>B</span>
+</span>
+</a>
+<a class="nav-link nav-link-modern nav-link-kontak text-gray-700" href="#" onclick="showPage('kontak')">
+<span class="nav-text-animate">
+<span>📞</span>
+<span>K</span><span>o</span><span>n</span><span>t</span><span>a</span><span>k</span>
+</span>
+</a>
+<button class="gradient-secondary text-white px-6 py-3 rounded-xl hover:shadow-lg transition-all btn-modern ml-4" onclick="showLoginModal()">
+<i class="fas fa-sign-in-alt mr-2"></i>
+<span class="nav-text-animate">
+<span>L</span><span>o</span><span>g</span><span>i</span><span>n</span>
+</span>
+</button>
+</nav>
+<!-- Mobile Menu Button -->
+<button class="lg:hidden text-gray-700 p-2 rounded-xl hover:bg-gray-100 transition-colors" onclick="toggleMobileMenu()">
+<i class="fas fa-bars text-xl"></i>
+</button>
+</div>
+<!-- Mobile Menu -->
+<div class="lg:hidden hidden pb-4" id="mobile-menu">
+<div class="glass rounded-2xl p-4 mt-4">
+<div class="flex flex-col space-y-3">
+<a class="mobile-nav-item text-gray-700 py-3 px-4 rounded-lg font-semibold" href="#" onclick="showPage('beranda')">
+<span class="nav-text-animate">
+<span>🏠</span> <span>B</span><span>e</span><span>r</span><span>a</span><span>n</span><span>d</span><span>a</span>
+</span>
+</a>
+<a class="mobile-nav-item text-gray-700 py-3 px-4 rounded-lg font-semibold" href="#" onclick="showPage('profil')">
+<span class="nav-text-animate">
+<span>🏫</span> <span>P</span><span>r</span><span>o</span><span>f</span><span>i</span><span>l</span>
+</span>
+</a>
+<a class="mobile-nav-item text-gray-700 py-3 px-4 rounded-lg font-semibold" href="#" onclick="showPage('agenda')">
+<span class="nav-text-animate">
+<span>📅</span> <span>A</span><span>g</span><span>e</span><span>n</span><span>d</span><span>a</span>
+</span>
+</a>
+<a class="mobile-nav-item text-gray-700 py-3 px-4 rounded-lg font-semibold" href="#" onclick="showPage('informasi')">
+<span class="nav-text-animate">
+<span>📢</span> <span>I</span><span>n</span><span>f</span><span>o</span><span>r</span><span>m</span><span>a</span><span>s</span><span>i</span>
+</span>
+</a>
+<a class="mobile-nav-item text-gray-700 py-3 px-4 rounded-lg font-semibold" href="#" onclick="showPage('galeri')">
+<span class="nav-text-animate">
+<span>🖼️</span> <span>G</span><span>a</span><span>l</span><span>e</span><span>r</span><span>i</span>
+</span>
+</a>
+<a class="mobile-nav-item text-gray-700 py-3 px-4 rounded-lg font-semibold" href="#" onclick="showPage('guru')">
+<span class="nav-text-animate">
+<span>👨‍🏫</span> <span>G</span><span>u</span><span>r</span><span>u</span>
+</span>
+</a>
+<a class="mobile-nav-item text-gray-700 py-3 px-4 rounded-lg font-semibold" href="#" onclick="showPage('spmb')">
+<span class="nav-text-animate">
+<span>📝</span> <span>S</span><span>P</span><span>M</span><span>B</span>
+</span>
+</a>
+<a class="mobile-nav-item text-gray-700 py-3 px-4 rounded-lg font-semibold" href="#" onclick="showPage('kontak')">
+<span class="nav-text-animate">
+<span>📞</span> <span>K</span><span>o</span><span>n</span><span>t</span><span>a</span><span>k</span>
+</span>
+</a>
+<button class="gradient-secondary text-white px-6 py-3 rounded-xl hover:shadow-lg transition-all w-fit btn-modern mt-4" onclick="showLoginModal()">
+<i class="fas fa-sign-in-alt mr-2"></i>
+<span class="nav-text-animate">
+<span>L</span><span>o</span><span>g</span><span>i</span><span>n</span>
+</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Important Announcement Banner -->
+<div class="announcement-banner text-white text-center py-3 hidden" id="announcement-banner">
+<div class="container mx-auto px-4">
+<p class="font-semibold"><i class="fas fa-bullhorn mr-2"></i><span id="announcement-text"></span></p>
+</div>
+</div>
+<!-- Main Content -->
+<main class="min-h-screen">
+<!-- Beranda Page -->
+<div class="page-content" id="page-beranda">
+<!-- Hero Section -->
+<section class="py-32 hero-modern relative overflow-hidden" id="hero-section">
+<!-- Animated Background Shapes -->
+<div class="bg-shapes">
+<div class="shape"></div>
+<div class="shape"></div>
+<div class="shape"></div>
+<div class="shape"></div>
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20" id="hero-overlay"></div>
+<div class="container mx-auto px-4 text-center relative z-10">
+<div class="max-w-6xl mx-auto">
+<div class="glass rounded-3xl p-12 shadow-2xl reveal">
+<div class="mb-8">
+<div class="inline-block p-4 rounded-full gradient-warm mb-6 float">
+<i class="fas fa-school text-white text-4xl"></i>
+</div>
+</div>
+<h3 class="text-2xl text-white/90 mb-6 font-light tracking-wide">Selamat Datang di</h3>
+<h2 class="text-7xl font-black text-white mb-8 leading-tight heading-playful">
+                                SD Negeri 2 Pandan
+                            </h2>
+<p class="text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">
+                                Membangun generasi cerdas, berkarakter, dan berprestasi untuk masa depan Indonesia yang gemilang
+                            </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+<button class="gradient-secondary text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all btn-modern transform hover:scale-105" onclick="showPage('profil')">
+<i class="fas fa-info-circle mr-3"></i>Tentang Kami
+                                </button>
+<button class="gradient-warm text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all btn-modern transform hover:scale-105" onclick="showPage('spmb')">
+<i class="fas fa-user-plus mr-3"></i>Daftar Sekarang
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Principal Welcome -->
+<section class="py-20 relative">
+<div class="container mx-auto px-4">
+<div class="max-w-6xl mx-auto">
+<div class="card-modern p-8 lg:p-16 reveal">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div>
+<div class="mb-8">
+<span class="inline-block px-4 py-2 gradient-warm text-white rounded-full text-sm font-semibold mb-4">
+<i class="fas fa-quote-left mr-2"></i>Sambutan
+                                        </span>
+<h3 class="text-4xl font-bold text-gradient mb-6 heading-playful">Kepala Sekolah</h3>
+</div>
+<div class="text-gray-600 leading-relaxed text-lg mb-8" id="principal-welcome">
+<p class="text-center text-gray-500 italic">Sambutan kepala sekolah akan diisi oleh admin</p>
+</div>
+<div class="glass rounded-2xl p-6">
+<p class="font-bold text-xl text-gray-800 mb-2" id="principal-name">Kepala Sekolah</p>
+<p class="text-gray-600 font-medium">SD Negeri 2 Pandan</p>
+<div class="flex items-center mt-4 text-sm text-gray-500">
+<i class="fas fa-calendar-alt mr-2"></i>
+<span>Periode 2020 - Sekarang</span>
+</div>
+</div>
+</div>
+<div class="text-center">
+<div class="relative">
+<div class="w-80 h-80 mx-auto gradient-primary rounded-3xl flex items-center justify-center shadow-2xl float">
+<i class="fas fa-user-tie text-white text-9xl" id="principal-photo"></i>
+</div>
+<!-- Decorative elements -->
+<div class="absolute -top-4 -right-4 w-16 h-16 gradient-secondary rounded-2xl opacity-80 float" style="animation-delay: 1s;"></div>
+<div class="absolute -bottom-4 -left-4 w-12 h-12 gradient-success rounded-xl opacity-60 float" style="animation-delay: 2s;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Profil Sekolah Page -->
+<div class="page-content hidden" id="page-profil">
+<!-- Hero Section for Profil -->
+<section class="py-20 hero-modern relative overflow-hidden">
+<div class="bg-shapes">
+<div class="shape"></div>
+<div class="shape"></div>
+<div class="shape"></div>
+</div>
+<div class="container mx-auto px-4 text-center relative z-10">
+<div class="max-w-4xl mx-auto">
+<div class="glass rounded-3xl p-12 shadow-2xl reveal">
+<div class="inline-block p-4 rounded-full gradient-primary mb-6 float">
+<i class="fas fa-school text-white text-4xl"></i>
+</div>
+<h2 class="text-6xl font-black text-white mb-6 leading-tight heading-playful">
+                                Profil Sekolah
+                            </h2>
+<p class="text-xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+                                Mengenal lebih dekat SD Negeri 2 Pandan - Sekolah yang berkomitmen membangun generasi cerdas dan berkarakter
+                            </p>
+</div>
+</div>
+</div>
+</section>
+<div class="container mx-auto px-4 py-16">
+<div class="max-w-6xl mx-auto space-y-12">
+<!-- Visi Misi -->
+<div class="card-modern p-10 reveal">
+<div class="grid lg:grid-cols-2 gap-8 items-center">
+<div>
+<div class="mb-6">
+<div class="inline-block p-3 rounded-2xl gradient-primary mb-4">
+<i class="fas fa-eye text-white text-2xl"></i>
+</div>
+<h3 class="text-3xl font-bold text-gradient mb-4 heading-playful">Visi &amp; Misi</h3>
+</div>
+<div class="text-gray-600 text-lg leading-relaxed" id="visi-misi-content">
+<p class="text-center text-gray-500 italic">Konten akan diisi oleh admin</p>
+</div>
+</div>
+<div class="text-center">
+<div class="w-80 h-80 mx-auto gradient-primary rounded-3xl flex items-center justify-center shadow-2xl float">
+<i class="fas fa-bullseye text-white text-8xl"></i>
+</div>
+</div>
+</div>
+</div>
+<!-- Sejarah -->
+<div class="card-modern p-10 reveal">
+<div class="grid lg:grid-cols-2 gap-8 items-center">
+<div class="text-center lg:order-1">
+<div class="w-80 h-80 mx-auto gradient-success rounded-3xl flex items-center justify-center shadow-2xl float">
+<i class="fas fa-history text-white text-8xl"></i>
+</div>
+</div>
+<div class="lg:order-2">
+<div class="mb-6">
+<div class="inline-block p-3 rounded-2xl gradient-success mb-4">
+<i class="fas fa-history text-white text-2xl"></i>
+</div>
+<h3 class="text-3xl font-bold text-gradient mb-4 heading-playful">Sejarah Sekolah</h3>
+</div>
+<div class="text-gray-600 text-lg leading-relaxed" id="sejarah-content">
+<p class="text-center text-gray-500 italic">Konten akan diisi oleh admin</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Prestasi -->
+<div class="card-modern p-10 reveal">
+<div class="mb-8 text-center">
+<div class="inline-block p-3 rounded-2xl gradient-warm mb-4">
+<i class="fas fa-trophy text-white text-2xl"></i>
+</div>
+<h3 class="text-3xl font-bold text-gradient mb-4 heading-playful">Prestasi Sekolah</h3>
+<p class="text-gray-600 text-lg">Pencapaian membanggakan dari berbagai kompetisi</p>
+</div>
+<div class="space-y-6" id="prestasi-content">
+<div class="text-center py-12 text-gray-500">
+<div class="w-24 h-24 mx-auto gradient-warm rounded-full flex items-center justify-center mb-6">
+<i class="fas fa-trophy text-white text-3xl"></i>
+</div>
+<p class="text-xl font-semibold mb-2">Belum ada data prestasi</p>
+<p class="text-gray-400">Data prestasi sekolah akan diisi oleh admin</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Agenda Sekolah Page -->
+<div class="page-content hidden" id="page-agenda">
+<!-- Hero Section for Agenda -->
+<section class="py-20 hero-modern relative overflow-hidden">
+<div class="bg-shapes">
+<div class="shape"></div>
+<div class="shape"></div>
+<div class="shape"></div>
+</div>
+<div class="container mx-auto px-4 text-center relative z-10">
+<div class="max-w-4xl mx-auto">
+<div class="glass rounded-3xl p-12 shadow-2xl reveal">
+<div class="inline-block p-4 rounded-full gradient-success mb-6 float">
+<i class="fas fa-calendar-alt text-white text-4xl"></i>
+</div>
+<h2 class="text-6xl font-black text-white mb-6 leading-tight">
+                                Agenda Sekolah
+                            </h2>
+<p class="text-xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+                                Jadwal kegiatan dan acara penting SD Negeri 2 Pandan yang akan datang
+                            </p>
+</div>
+</div>
+</div>
+</section>
+<div class="container mx-auto px-4 py-16">
+<div class="max-w-6xl mx-auto">
+<!-- Calendar Visual -->
+<div class="card-modern p-10 mb-12 reveal text-center">
+<div class="grid lg:grid-cols-2 gap-8 items-center">
+<div>
+<div class="mb-6">
+<div class="inline-block p-3 rounded-2xl gradient-success mb-4">
+<i class="fas fa-calendar-check text-white text-2xl"></i>
+</div>
+<h3 class="text-3xl font-bold text-gradient mb-4">Kalender Kegiatan</h3>
+<p class="text-gray-600 text-lg">Pantau semua kegiatan dan acara penting sekolah dalam satu tempat</p>
+</div>
+</div>
+<div class="text-center">
+<div class="w-80 h-80 mx-auto gradient-success rounded-3xl flex items-center justify-center shadow-2xl float">
+<i class="fas fa-calendar-week text-white text-8xl"></i>
+</div>
+</div>
+</div>
+</div>
+<!-- Agenda List -->
+<div class="card-modern p-8 reveal">
+<div class="mb-8 text-center">
+<h3 class="text-2xl font-bold text-gradient mb-4">Daftar Agenda Terbaru</h3>
+<p class="text-gray-600">Berikut adalah agenda kegiatan sekolah yang akan datang</p>
+</div>
+<div class="space-y-6" id="agenda-list">
+<div class="text-center py-16 text-gray-500">
+<div class="w-24 h-24 mx-auto gradient-cool rounded-full flex items-center justify-center mb-6">
+<i class="fas fa-calendar-plus text-white text-3xl"></i>
+</div>
+<p class="text-xl font-semibold mb-2">Belum ada agenda yang ditambahkan</p>
+<p class="text-gray-400">Agenda kegiatan sekolah akan muncul di sini</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Informasi Sekolah Page -->
+<div class="page-content hidden" id="page-informasi">
+<div class="container mx-auto px-4 py-16">
+<h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Informasi Sekolah</h2>
+<!-- Statistics Cards -->
+<div class="max-w-6xl mx-auto mb-16">
+<div class="text-center mb-12">
+<h3 class="text-4xl font-bold text-gradient mb-4">Statistik Sekolah</h3>
+<p class="text-gray-600 text-lg">Data terkini tentang SD Negeri 2 Pandan - Klik untuk melihat detail</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="stat-card p-8 text-center reveal cursor-pointer hover:scale-105 transition-transform" onclick="showStatDetail('siswa')">
+<div class="w-20 h-20 gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 float">
+<i class="fas fa-users text-white text-3xl"></i>
+</div>
+<h4 class="text-xl font-bold text-gray-800 mb-3">Siswa Aktif</h4>
+<p class="text-4xl font-black text-gradient mb-2" id="stat-siswa">-</p>
+<div class="w-full bg-gray-200 rounded-full h-2 mb-3">
+<div class="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full" style="width: 85%"></div>
+</div>
+<p class="text-sm text-blue-600 font-medium">Klik untuk detail per kelas</p>
+</div>
+<div class="stat-card p-8 text-center reveal cursor-pointer hover:scale-105 transition-transform" onclick="showStatDetail('guru')" style="animation-delay: 0.1s;">
+<div class="w-20 h-20 gradient-success rounded-2xl flex items-center justify-center mx-auto mb-6 float">
+<i class="fas fa-chalkboard-teacher text-white text-3xl"></i>
+</div>
+<h4 class="text-xl font-bold text-gray-800 mb-3">Guru &amp; Staf</h4>
+<p class="text-4xl font-black text-gradient mb-2" id="stat-guru">-</p>
+<div class="w-full bg-gray-200 rounded-full h-2 mb-3">
+<div class="bg-gradient-to-r from-green-500 to-blue-500 h-2 rounded-full" style="width: 92%"></div>
+</div>
+<p class="text-sm text-green-600 font-medium">Klik untuk daftar lengkap</p>
+</div>
+<div class="stat-card p-8 text-center reveal cursor-pointer hover:scale-105 transition-transform" onclick="showStatDetail('sekolah')" style="animation-delay: 0.3s;">
+<div class="w-20 h-20 gradient-secondary rounded-2xl flex items-center justify-center mx-auto mb-6 float">
+<i class="fas fa-school text-white text-3xl"></i>
+</div>
+<h4 class="text-xl font-bold text-gray-800 mb-3">Data Sekolah</h4>
+<p class="text-4xl font-black text-gradient mb-2" id="stat-tahun">-</p>
+<div class="w-full bg-gray-200 rounded-full h-2 mb-3">
+<div class="bg-gradient-to-r from-pink-500 to-purple-500 h-2 rounded-full" style="width: 100%"></div>
+</div>
+<p class="text-sm text-purple-600 font-medium">Klik untuk data lengkap</p>
+</div>
+<div class="stat-card p-8 text-center reveal cursor-pointer hover:scale-105 transition-transform" onclick="showStatDetail('program')" style="animation-delay: 0.4s;">
+<div class="w-20 h-20 gradient-orange rounded-2xl flex items-center justify-center mx-auto mb-6 float">
+<i class="fas fa-tasks text-white text-3xl"></i>
+</div>
+<h4 class="text-xl font-bold text-gray-800 mb-3">Program Sekolah</h4>
+<p class="text-4xl font-black text-gradient mb-2" id="stat-program">-</p>
+<div class="w-full bg-gray-200 rounded-full h-2 mb-3">
+<div class="bg-gradient-to-r from-orange-500 to-red-500 h-2 rounded-full" style="width: 88%"></div>
+</div>
+<p class="text-sm text-orange-600 font-medium">Klik untuk daftar program</p>
+</div>
+</div>
+</div>
+<div class="max-w-4xl mx-auto">
+<div class="card-modern p-8">
+<div class="space-y-6" id="informasi-list">
+<p class="text-center text-gray-500 italic py-8">Belum ada informasi yang ditambahkan</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Statistics Detail Modals -->
+<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[55] hidden" id="stat-modal">
+<div class="bg-white rounded-2xl p-8 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-2xl font-bold text-gray-800" id="stat-modal-title"></h3>
+<button class="text-gray-500 hover:text-gray-700 text-2xl" onclick="closeStatModal()">
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class="space-y-6" id="stat-modal-content">
+<!-- Content will be dynamically loaded -->
+</div>
+</div>
+</div>
+<!-- Student List Modal -->
+<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60] hidden" id="siswa-modal">
+<div class="bg-white rounded-2xl p-8 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-2xl font-bold text-gray-800" id="siswa-modal-title"></h3>
+<button class="text-gray-500 hover:text-gray-700 text-2xl" onclick="closeSiswaModal()">
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class="space-y-6" id="siswa-modal-content">
+<!-- Content will be dynamically loaded -->
+</div>
+</div>
+</div>
+
+
+<!-- Galeri Page -->
+<div class="page-content hidden" id="page-galeri">
+<!-- Hero Section for Galeri -->
+<section class="py-20 hero-modern relative overflow-hidden">
+<div class="bg-shapes">
+<div class="shape"></div>
+<div class="shape"></div>
+<div class="shape"></div>
+</div>
+<div class="container mx-auto px-4 text-center relative z-10">
+<div class="max-w-4xl mx-auto">
+<div class="glass rounded-3xl p-12 shadow-2xl reveal">
+<div class="inline-block p-4 rounded-full gradient-secondary mb-6 float">
+<i class="fas fa-images text-white text-4xl"></i>
+</div>
+<h2 class="text-6xl font-black text-white mb-6 leading-tight">
+                                Galeri
+                            </h2>
+<p class="text-xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+                                Dokumentasi kegiatan dan momen berharga di SD Negeri 2 Pandan
+                            </p>
+</div>
+</div>
+</div>
+</section>
+<div class="container mx-auto px-4 py-16">
+<div class="max-w-7xl mx-auto">
+<!-- Gallery Introduction -->
+<div class="card-modern p-10 mb-12 reveal text-center">
+<div class="grid lg:grid-cols-2 gap-8 items-center">
+<div>
+<div class="mb-6">
+<div class="inline-block p-3 rounded-2xl gradient-secondary mb-4">
+<i class="fas fa-camera text-white text-2xl"></i>
+</div>
+<h3 class="text-3xl font-bold text-gradient mb-4">Dokumentasi Kegiatan</h3>
+<p class="text-gray-600 text-lg">Kumpulan foto dan video kegiatan sekolah yang menginspirasi</p>
+</div>
+</div>
+<div class="text-center">
+<div class="w-80 h-80 mx-auto gradient-secondary rounded-3xl flex items-center justify-center shadow-2xl float">
+<i class="fas fa-photo-video text-white text-8xl"></i>
+</div>
+</div>
+</div>
+</div>
+<!-- Gallery Grid -->
+<div class="card-modern p-8 reveal">
+<div class="mb-8 text-center">
+<h3 class="text-2xl font-bold text-gradient mb-4">Koleksi Foto &amp; Video</h3>
+<p class="text-gray-600">Momen-momen berharga dalam perjalanan pendidikan</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="galeri-grid">
+<div class="col-span-full text-center py-16 text-gray-500">
+<div class="w-24 h-24 mx-auto gradient-warm rounded-full flex items-center justify-center mb-6">
+<i class="fas fa-image text-white text-3xl"></i>
+</div>
+<p class="text-xl font-semibold mb-2">Belum ada foto/video yang ditambahkan</p>
+<p class="text-gray-400">Galeri foto dan video kegiatan sekolah akan muncul di sini</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Guru & Staf Page -->
+<div class="page-content hidden" id="page-guru">
+<!-- Hero Section for Guru -->
+<section class="py-20 hero-modern relative overflow-hidden">
+<div class="bg-shapes">
+<div class="shape"></div>
+<div class="shape"></div>
+<div class="shape"></div>
+</div>
+<div class="container mx-auto px-4 text-center relative z-10">
+<div class="max-w-4xl mx-auto">
+<div class="glass rounded-3xl p-12 shadow-2xl reveal">
+<div class="inline-block p-4 rounded-full gradient-cool mb-6 float">
+<i class="fas fa-chalkboard-teacher text-white text-4xl"></i>
+</div>
+<h2 class="text-6xl font-black text-white mb-6 leading-tight">
+                                Guru &amp; Staf
+                            </h2>
+<p class="text-xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+                                Tim pendidik profesional dan berpengalaman yang mendedikasikan diri untuk pendidikan terbaik
+                            </p>
+</div>
+</div>
+</div>
+</section>
+<div class="container mx-auto px-4 py-16">
+<div class="max-w-7xl mx-auto">
+<!-- Team Introduction -->
+<div class="card-modern p-10 mb-12 reveal text-center">
+<div class="grid lg:grid-cols-2 gap-8 items-center">
+<div>
+<div class="mb-6">
+<div class="inline-block p-3 rounded-2xl gradient-cool mb-4">
+<i class="fas fa-users text-white text-2xl"></i>
+</div>
+<h3 class="text-3xl font-bold text-gradient mb-4">Tim Pendidik Profesional</h3>
+<p class="text-gray-600 text-lg">Guru dan staf yang berpengalaman, berkualitas, dan berkomitmen tinggi dalam mendidik generasi penerus bangsa</p>
+</div>
+</div>
+<div class="text-center">
+<div class="w-80 h-80 mx-auto gradient-cool rounded-3xl flex items-center justify-center shadow-2xl float">
+<i class="fas fa-user-graduate text-white text-8xl"></i>
+</div>
+</div>
+</div>
+</div>
+<!-- Teachers Grid -->
+<div class="card-modern p-8 reveal">
+<div class="mb-8 text-center">
+<h3 class="text-2xl font-bold text-gradient mb-4">Daftar Guru &amp; Staf</h3>
+<p class="text-gray-600">Tenaga pendidik dan kependidikan SD Negeri 2 Pandan</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="guru-grid">
+<div class="col-span-full text-center py-16 text-gray-500">
+<div class="w-24 h-24 mx-auto gradient-primary rounded-full flex items-center justify-center mb-6">
+<i class="fas fa-user-plus text-white text-3xl"></i>
+</div>
+<p class="text-xl font-semibold mb-2">Belum ada data guru &amp; staf yang ditambahkan</p>
+<p class="text-gray-400">Profil guru dan staf sekolah akan muncul di sini</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Hubungi Kami Page -->
+<div class="page-content hidden" id="page-kontak">
+<!-- Hero Section for Kontak -->
+<section class="py-20 hero-modern relative overflow-hidden">
+<div class="bg-shapes">
+<div class="shape"></div>
+<div class="shape"></div>
+<div class="shape"></div>
+</div>
+<div class="container mx-auto px-4 text-center relative z-10">
+<div class="max-w-4xl mx-auto">
+<div class="glass rounded-3xl p-12 shadow-2xl reveal">
+<div class="inline-block p-4 rounded-full gradient-success mb-6 float">
+<i class="fas fa-phone text-white text-4xl"></i>
+</div>
+<h2 class="text-6xl font-black text-white mb-6 leading-tight">
+                                Hubungi Kami
+                            </h2>
+<p class="text-xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+                                Kami siap membantu dan menjawab pertanyaan Anda tentang SD Negeri 2 Pandan
+                            </p>
+</div>
+</div>
+</div>
+</section>
+<div class="container mx-auto px-4 py-16">
+<div class="max-w-7xl mx-auto">
+<!-- Contact Introduction -->
+<div class="card-modern p-10 mb-12 reveal text-center">
+<div class="grid lg:grid-cols-2 gap-8 items-center">
+<div>
+<div class="mb-6">
+<div class="inline-block p-3 rounded-2xl gradient-success mb-4">
+<i class="fas fa-comments text-white text-2xl"></i>
+</div>
+<h3 class="text-3xl font-bold text-gradient mb-4">Mari Berkomunikasi</h3>
+<p class="text-gray-600 text-lg">Jangan ragu untuk menghubungi kami. Tim kami siap membantu dengan informasi yang Anda butuhkan</p>
+</div>
+</div>
+<div class="text-center">
+<div class="w-80 h-80 mx-auto gradient-success rounded-3xl flex items-center justify-center shadow-2xl float">
+<i class="fas fa-handshake text-white text-8xl"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="grid lg:grid-cols-2 gap-12">
+<!-- Contact Information -->
+<div class="card-modern p-10 reveal">
+<div class="mb-8">
+<div class="inline-block p-3 rounded-2xl gradient-primary mb-4">
+<i class="fas fa-info-circle text-white text-2xl"></i>
+</div>
+<h3 class="text-3xl font-bold text-gradient mb-4">Informasi Kontak</h3>
+<p class="text-gray-600">Berikut adalah cara untuk menghubungi kami</p>
+</div>
+<div class="space-y-6">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+<i class="fas fa-map-marker-alt text-blue-600"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800 mb-2">Alamat Sekolah</h4>
+<p class="text-gray-600" id="school-address">Jl. Pendidikan No. 123, Pandan, Kec. Pandan, Kab. Tapanuli Tengah, Sumatera Utara</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+<i class="fas fa-envelope text-red-600"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800 mb-2">Email</h4>
+<p class="text-gray-600" id="school-email">info@sdnegeri2pandan.sch.id</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+<i class="fas fa-clock text-purple-600"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800 mb-2">Jam Operasional</h4>
+<div class="text-gray-600" id="school-hours">
+<p>Senin - Jumat: 07:00 - 15:00 WIB</p>
+<p>Sabtu: 07:00 - 12:00 WIB</p>
+<p>Minggu: Tutup</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Social Media -->
+<div class="mt-8 pt-6 border-t">
+<h4 class="font-semibold text-gray-800 mb-4">Ikuti Kami</h4>
+<div class="flex space-x-4" id="contact-social-media">
+<p class="text-gray-400 italic">Sosial media akan diatur oleh admin</p>
+</div>
+</div>
+</div>
+<!-- Contact Form -->
+<div class="card-modern p-10 reveal">
+<div class="mb-8">
+<div class="inline-block p-3 rounded-2xl gradient-secondary mb-4">
+<i class="fas fa-envelope text-white text-2xl"></i>
+</div>
+<h3 class="text-3xl font-bold text-gradient mb-4">Kirim Pesan</h3>
+<p class="text-gray-600">Sampaikan pertanyaan, saran, atau masukan Anda kepada kami</p>
+</div>
+<form class="form-modern space-y-8" id="contact-form">
+<div class="relative">
+<label class="block text-gray-700 font-semibold mb-3 text-lg">Nama Lengkap</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<i class="fas fa-user text-gray-400"></i>
+</div>
+<input class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-lg" id="contact-name" placeholder="Masukkan nama lengkap Anda" required="" type="text"/>
+</div>
+</div>
+<div class="relative">
+<label class="block text-gray-700 font-semibold mb-3 text-lg">Saran/Pesan</label>
+<div class="relative">
+<div class="absolute top-4 left-4 pointer-events-none">
+<i class="fas fa-comment-alt text-gray-400"></i>
+</div>
+<textarea class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-lg resize-none" id="contact-message" placeholder="Tulis saran, pertanyaan, atau pesan Anda di sini..." required="" rows="6"></textarea>
+</div>
+</div>
+<div class="text-center pt-4">
+<button class="gradient-secondary text-white px-12 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all transform hover:scale-105 btn-modern" type="submit">
+<i class="fas fa-paper-plane mr-3"></i>Kirim Pesan
+                                    </button>
+<p class="text-sm text-gray-500 mt-4">Pesan Anda akan langsung diterima oleh admin sekolah</p>
+</div>
+</form>
+</div>
+</div>
+<!-- Map Section -->
+<div class="mt-12 card-modern p-10 reveal">
+<div class="mb-8 text-center">
+<div class="inline-block p-3 rounded-2xl gradient-warm mb-4">
+<i class="fas fa-map-marker-alt text-white text-2xl"></i>
+</div>
+<h3 class="text-3xl font-bold text-gradient mb-4">Lokasi Sekolah</h3>
+<p class="text-gray-600">Temukan lokasi SD Negeri 2 Pandan dengan mudah</p>
+</div>
+<div class="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl h-80 flex items-center justify-center shadow-inner">
+<div class="text-center text-gray-600">
+<div class="w-24 h-24 mx-auto gradient-warm rounded-full flex items-center justify-center mb-6 pulse-slow">
+<i class="fas fa-map-marked-alt text-white text-4xl"></i>
+</div>
+<p class="text-2xl font-bold mb-2">Peta Lokasi</p>
+<p class="text-lg text-gray-500">Peta interaktif akan ditampilkan di sini</p>
+</div>
+</div>
+<div class="mt-6 p-4 bg-blue-50 rounded-xl">
+<p class="text-blue-700 font-medium flex items-center">
+<i class="fas fa-info-circle mr-2"></i>
+                                Untuk navigasi yang lebih akurat, silakan gunakan aplikasi peta dengan alamat yang tertera di atas.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SPMB Page -->
+<div class="page-content hidden" id="page-spmb">
+<!-- Hero Section for SPMB -->
+<section class="py-20 hero-modern relative overflow-hidden">
+<div class="bg-shapes">
+<div class="shape"></div>
+<div class="shape"></div>
+<div class="shape"></div>
+</div>
+<div class="container mx-auto px-4 text-center relative z-10">
+<div class="max-w-4xl mx-auto">
+<div class="glass rounded-3xl p-12 shadow-2xl reveal">
+<div class="inline-block p-4 rounded-full gradient-warm mb-6 float">
+<i class="fas fa-user-plus text-white text-4xl"></i>
+</div>
+<h2 class="text-6xl font-black text-white mb-6 leading-tight">
+                                SPMB
+                            </h2>
+<p class="text-xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+                                Seleksi Penerimaan Murid Baru SD Negeri 2 Pandan - Bergabunglah dengan keluarga besar kami
+                            </p>
+</div>
+</div>
+</div>
+</section>
+<div class="container mx-auto px-4 py-16">
+<div class="max-w-6xl mx-auto">
+<!-- SPMB Introduction -->
+<div class="card-modern p-10 mb-12 reveal text-center">
+<div class="grid lg:grid-cols-2 gap-8 items-center">
+<div>
+<div class="mb-6">
+<div class="inline-block p-3 rounded-2xl gradient-warm mb-4">
+<i class="fas fa-graduation-cap text-white text-2xl"></i>
+</div>
+<h3 class="text-3xl font-bold text-gradient mb-4">Bergabung Bersama Kami</h3>
+<p class="text-gray-600 text-lg">Wujudkan impian pendidikan terbaik untuk buah hati Anda di SD Negeri 2 Pandan</p>
+</div>
+</div>
+<div class="text-center">
+<div class="w-80 h-80 mx-auto gradient-warm rounded-3xl flex items-center justify-center shadow-2xl float">
+<i class="fas fa-school text-white text-8xl"></i>
+</div>
+</div>
+</div>
+</div>
+<!-- SPMB Status -->
+<div class="card-modern p-12 text-center reveal" id="spmb-closed">
+<div class="w-32 h-32 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-8 pulse-slow">
+<i class="fas fa-lock text-red-600 text-5xl"></i>
+</div>
+<h3 class="text-3xl font-bold text-gray-800 mb-6">Pendaftaran Belum Dibuka</h3>
+<p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">Silakan tunggu pengumuman resmi dari sekolah untuk pembukaan pendaftaran murid baru. Pantau terus website ini untuk informasi terbaru.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="gradient-primary text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl transition-all btn-modern" onclick="showPage('kontak')">
+<i class="fas fa-phone mr-2"></i>Hubungi Kami
+                            </button>
+<button class="glass-dark text-gray-700 px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl transition-all btn-modern" onclick="showPage('informasi')">
+<i class="fas fa-info-circle mr-2"></i>Info Sekolah
+                            </button>
+</div>
+</div>
+<div class="batik-pattern rounded-2xl p-8 shadow-lg hidden" id="spmb-open">
+<div class="text-center mb-8">
+<div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="fas fa-user-plus text-green-600 text-4xl"></i>
+</div>
+<h3 class="text-2xl font-bold text-gray-800 mb-4">Pendaftaran Dibuka!</h3>
+<p class="text-gray-600 mb-8">Silakan baca informasi di bawah ini sebelum mengisi formulir pendaftaran.</p>
+</div>
+<!-- SPMB Information Display -->
+<div class="mb-8 space-y-6" id="spmb-info-display">
+<div class="bg-blue-50 rounded-lg p-6">
+<h4 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+<i class="fas fa-calendar-alt text-blue-600 mr-2"></i>Jadwal Pendaftaran
+                                </h4>
+<div class="text-gray-600" id="spmb-schedule-display">
+<p class="italic">Jadwal akan diatur oleh admin</p>
+</div>
+</div>
+<div class="bg-green-50 rounded-lg p-6">
+<h4 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+<i class="fas fa-list-check text-green-600 mr-2"></i>Persyaratan Pendaftaran
+                                </h4>
+<div class="text-gray-600" id="spmb-requirements-display">
+<p class="italic">Persyaratan akan diatur oleh admin</p>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-6">
+<div class="bg-purple-50 rounded-lg p-6">
+<h4 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+<i class="fas fa-clipboard-check text-purple-600 mr-2"></i>Jadwal Tes
+                                    </h4>
+<div class="text-gray-600" id="spmb-test-display">
+<p class="italic">Jadwal tes akan diatur oleh admin</p>
+</div>
+</div>
+<div class="bg-yellow-50 rounded-lg p-6">
+<h4 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+<i class="fas fa-money-bill text-yellow-600 mr-2"></i>Biaya Pendaftaran
+                                    </h4>
+<div class="text-gray-600" id="spmb-fee-display">
+<p class="italic">Biaya akan diatur oleh admin</p>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 rounded-lg p-6">
+<h4 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+<i class="fas fa-info-circle text-gray-600 mr-2"></i>Informasi Tambahan
+                                </h4>
+<div class="text-gray-600" id="spmb-additional-display">
+<p class="italic">Informasi tambahan akan diatur oleh admin</p>
+</div>
+</div>
+<div class="bg-red-50 rounded-lg p-6">
+<h4 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+<i class="fas fa-phone text-red-600 mr-2"></i>Kontak Informasi
+                                </h4>
+<div class="text-gray-600" id="spmb-contact-display">
+<p class="italic">Kontak akan diatur oleh admin</p>
+</div>
+</div>
+</div>
+<div class="border-t pt-8">
+<h4 class="text-xl font-bold text-gray-800 mb-6 text-center">Formulir Pendaftaran</h4>
+<form class="space-y-6" id="spmb-form">
+<div class="grid md:grid-cols-2 gap-6">
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Nama Lengkap Calon Siswa</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required="" type="text"/>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Tempat, Tanggal Lahir</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required="" type="text"/>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-6">
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Jenis Kelamin</label>
+<select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required="">
+<option value="">Pilih Jenis Kelamin</option>
+<option value="L">Laki-laki</option>
+<option value="P">Perempuan</option>
+</select>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Agama</label>
+<select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required="">
+<option value="">Pilih Agama</option>
+<option value="Islam">Islam</option>
+<option value="Kristen">Kristen</option>
+<option value="Katolik">Katolik</option>
+<option value="Hindu">Hindu</option>
+<option value="Buddha">Buddha</option>
+<option value="Konghucu">Konghucu</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Alamat Lengkap</label>
+<textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required="" rows="3"></textarea>
+</div>
+<div class="grid md:grid-cols-2 gap-6">
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Nama Ayah</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required="" type="text"/>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Nama Ibu</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required="" type="text"/>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-6">
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Pekerjaan Ayah</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required="" type="text"/>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Pekerjaan Ibu</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required="" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">No. Telepon/WhatsApp Orang Tua</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required="" type="tel"/>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Upload Dokumen (Akta Kelahiran, KK, dll)</label>
+<input accept=".pdf,.jpg,.jpeg,.png" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" multiple="" type="file"/>
+<p class="text-sm text-gray-500 mt-2">Format: PDF, JPG, PNG (Max 5MB per file)</p>
+</div>
+<div class="text-center pt-6">
+<button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105" type="submit">
+<i class="fas fa-paper-plane mr-2"></i>Daftar Sekarang
+                                </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div></main>
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8">
+<div class="container mx-auto px-4">
+<!-- Social Media -->
+<div class="text-center mb-6">
+<h3 class="text-lg font-semibold mb-4">Ikuti Kami</h3>
+<div class="flex justify-center space-x-6" id="social-media-links">
+<p class="text-gray-400 italic">Sosial media akan diatur oleh admin</p>
+</div>
+</div>
+<!-- Copyright -->
+<div class="text-center border-t border-gray-700 pt-6">
+<p class="text-gray-400">© 2025 SD Negeri 2 Pandan Present</p>
+</div>
+</div>
+</footer>
+<!-- WhatsApp Float Button -->
+<a class="whatsapp-float" href="#" id="whatsapp-btn" onclick="contactWhatsApp()">
+<i class="fab fa-whatsapp mr-2"></i>Hubungi Kami
+    </a>
+<!-- Login Modal -->
+<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden" id="login-modal">
+<div class="batik-pattern rounded-2xl p-8 max-w-md w-full mx-4">
+<div class="text-center mb-6">
+<h3 class="text-2xl font-bold text-gray-800">Login Admin</h3>
+<p class="text-gray-600">Masuk ke panel administrasi</p>
+</div>
+<form class="space-y-4" id="login-form">
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Username</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" id="username" required="" type="text"/>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Password</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" id="password" required="" type="password"/>
+</div>
+<div class="flex space-x-4">
+<button class="flex-1 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors" type="submit">Login</button>
+<button class="flex-1 bg-gray-300 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-400 transition-colors" onclick="hideLoginModal()" type="button">Batal</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Admin Panel -->
+<div class="admin-panel fixed inset-0 bg-white z-[100] overflow-y-auto" id="admin-panel">
+<div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6">
+<div class="flex justify-between items-center">
+<h2 class="text-2xl font-bold">Panel Admin - SD Negeri 2 Pandan</h2>
+<button class="bg-white/20 px-4 py-2 rounded-lg hover:bg-white/30 transition-colors" onclick="logout()">
+<i class="fas fa-sign-out-alt mr-2"></i>Logout
+                </button>
+</div>
+</div>
+<div class="container mx-auto px-4 py-8">
+<div class="grid lg:grid-cols-4 gap-8">
+<!-- Admin Sidebar -->
+<div class="lg:col-span-1">
+<div class="admin-sidebar p-6 shadow-2xl sticky top-4">
+<div class="text-center mb-6">
+<div class="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-3">
+<i class="fas fa-cogs text-white text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-gradient">Menu Admin</h3>
+</div>
+<nav class="space-y-3">
+<button class="admin-nav-btn w-full text-left px-4 py-3 rounded-xl transition-all" onclick="showAdminSection('sekolah')">
+<i class="fas fa-school mr-3 w-5"></i>Pengaturan Sekolah
+                            </button>
+<button class="admin-nav-btn w-full text-left px-4 py-3 rounded-xl transition-all" onclick="showAdminSection('profil')">
+<i class="fas fa-info-circle mr-3 w-5"></i>Profil Sekolah
+                            </button>
+<button class="admin-nav-btn w-full text-left px-4 py-3 rounded-xl transition-all" onclick="showAdminSection('agenda')">
+<i class="fas fa-calendar mr-3 w-5"></i>Agenda Sekolah
+                            </button>
+<button class="admin-nav-btn w-full text-left px-4 py-3 rounded-xl transition-all" onclick="showAdminSection('informasi')">
+<i class="fas fa-newspaper mr-3 w-5"></i>Informasi Sekolah
+                            </button>
+<button class="admin-nav-btn w-full text-left px-4 py-3 rounded-xl transition-all" onclick="showAdminSection('galeri')">
+<i class="fas fa-images mr-3 w-5"></i>Galeri
+                            </button>
+<button class="admin-nav-btn w-full text-left px-4 py-3 rounded-xl transition-all" onclick="showAdminSection('guru')">
+<i class="fas fa-users mr-3 w-5"></i>Guru &amp; Staf
+                            </button>
+<button class="admin-nav-btn w-full text-left px-4 py-3 rounded-xl transition-all" onclick="showAdminSection('spmb')">
+<i class="fas fa-user-plus mr-3 w-5"></i>SPMB
+                            </button>
+<button class="admin-nav-btn w-full text-left px-4 py-3 rounded-xl transition-all" onclick="showAdminSection('kontak')">
+<i class="fas fa-phone mr-3 w-5"></i>Kontak Sekolah
+                            </button>
+<button class="admin-nav-btn w-full text-left px-4 py-3 rounded-xl transition-all" onclick="showAdminSection('pesan')">
+<i class="fas fa-envelope mr-3 w-5"></i>Pesan Masuk
+                            </button>
+</nav>
+</div>
+</div>
+<!-- Admin Content -->
+<div class="lg:col-span-3">
+<!-- Pengaturan Sekolah -->
+<div class="admin-section" id="admin-sekolah">
+<div class="batik-subtle rounded-2xl p-8 shadow-lg">
+<h3 class="text-2xl font-bold text-gray-800 mb-6">Pengaturan Sekolah</h3>
+<div class="space-y-6">
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Logo Sekolah</label>
+<div class="space-y-4">
+<div>
+<label class="flex items-center space-x-2">
+<input checked="" name="logo-type" onchange="toggleLogoType()" type="radio" value="icon"/>
+<span>Gunakan Icon</span>
+</label>
+<select class="w-full px-4 py-3 border border-gray-300 rounded-lg mt-2" id="school-logo-select" onchange="updateSchoolLogo()">
+<option value="fas fa-graduation-cap">Topi Wisuda</option>
+<option value="fas fa-school">Gedung Sekolah</option>
+<option value="fas fa-book">Buku</option>
+<option value="fas fa-star">Bintang</option>
+<option value="fas fa-heart">Hati</option>
+</select>
+</div>
+<div>
+<label class="flex items-center space-x-2">
+<input name="logo-type" onchange="toggleLogoType()" type="radio" value="upload"/>
+<span>Upload Logo</span>
+</label>
+<input accept="image/*" class="w-full px-4 py-3 border border-gray-300 rounded-lg mt-2" disabled="" id="school-logo-upload" onchange="uploadSchoolLogo()" type="file"/>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Motto Sekolah</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="school-motto-input" onchange="updateSchoolMotto()" type="text" value="Mencerdaskan Generasi Bangsa"/>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Sambutan Kepala Sekolah</label>
+<textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="principal-welcome-input" onchange="updatePrincipalWelcome()" placeholder="Masukkan sambutan kepala sekolah..." rows="5"></textarea>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Nama Kepala Sekolah</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="principal-name-input" onchange="updatePrincipalName()" placeholder="Masukkan nama kepala sekolah" type="text"/>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Gambar Sekolah (Background Beranda)</label>
+<input accept="image/*" class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="school-image-upload" onchange="uploadSchoolImage()" type="file"/>
+<p class="text-sm text-gray-500 mt-2">Upload gambar sekolah untuk background di halaman beranda</p>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Nomor WhatsApp Sekolah</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="whatsapp-number" onchange="updateWhatsAppNumber()" placeholder="6281234567890" type="text"/>
+<p class="text-sm text-gray-500 mt-2">Format: 6281234567890 (dengan kode negara, tanpa +)</p>
+</div>
+<div class="border-t pt-6">
+<h4 class="text-lg font-semibold text-gray-800 mb-4">Sosial Media</h4>
+<div class="space-y-4">
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Facebook</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="facebook-url" onchange="updateSocialMedia()" placeholder="https://facebook.com/sdnegeri2pandan" type="url"/>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Instagram</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="instagram-url" onchange="updateSocialMedia()" placeholder="https://instagram.com/sdnegeri2pandan" type="url"/>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">YouTube</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="youtube-url" onchange="updateSocialMedia()" placeholder="https://youtube.com/@sdnegeri2pandan" type="url"/>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Twitter/X</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="twitter-url" onchange="updateSocialMedia()" placeholder="https://twitter.com/sdnegeri2pandan" type="url"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Admin Profil -->
+<div class="admin-section hidden" id="admin-profil">
+<div class="bg-white rounded-2xl p-8 shadow-lg">
+<h3 class="text-2xl font-bold text-gray-800 mb-6">Kelola Profil Sekolah</h3>
+<div class="space-y-8">
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Visi &amp; Misi</label>
+<textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="visi-misi-input" onchange="updateVisiMisi()" placeholder="Masukkan visi dan misi sekolah..." rows="6"></textarea>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Sejarah Sekolah</label>
+<textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="sejarah-input" onchange="updateSejarah()" placeholder="Masukkan sejarah sekolah..." rows="6"></textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- Admin Agenda -->
+<div class="admin-section hidden" id="admin-agenda">
+<div class="bg-white rounded-2xl p-8 shadow-lg">
+<h3 class="text-2xl font-bold text-gray-800 mb-6">Kelola Agenda Sekolah</h3>
+<div class="mb-6">
+<div class="grid md:grid-cols-3 gap-4 mb-4">
+<input class="px-4 py-3 border border-gray-300 rounded-lg" id="agenda-date" type="date"/>
+<input class="px-4 py-3 border border-gray-300 rounded-lg" id="agenda-title" placeholder="Nama Kegiatan" type="text"/>
+<input class="px-4 py-3 border border-gray-300 rounded-lg" id="agenda-desc" placeholder="Keterangan" type="text"/>
+</div>
+<button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors btn-animate" onclick="addAgenda()">
+<i class="fas fa-plus mr-2"></i>Tambah Agenda
+                                </button>
+</div>
+<div class="space-y-4" id="admin-agenda-list">
+<p class="text-gray-500 italic">Belum ada agenda yang ditambahkan</p>
+</div>
+</div>
+</div>
+<!-- Admin Informasi -->
+<div class="admin-section hidden" id="admin-informasi">
+<div class="bg-white rounded-2xl p-8 shadow-lg">
+<h3 class="text-2xl font-bold text-gray-800 mb-6">Kelola Informasi Sekolah</h3>
+<!-- Statistics Section -->
+<div class="mb-8 p-6 bg-gray-50 rounded-lg">
+<h4 class="text-lg font-semibold text-gray-800 mb-4">Statistik Sekolah</h4>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Jumlah Siswa</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="stat-siswa-input" onchange="updateStatistics()" placeholder="450+" type="text"/>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Jumlah Guru &amp; Staf</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="stat-guru-input" onchange="updateStatistics()" placeholder="25+" type="text"/>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Jumlah Prestasi</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="stat-prestasi-input" onchange="updateStatistics()" placeholder="50+" type="text"/>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Tahun Berdiri</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="stat-tahun-input" onchange="updateStatistics()" placeholder="1985" type="text"/>
+</div>
+</div>
+</div>
+<!-- Data Siswa Per Kelas -->
+<div class="mb-8 p-6 bg-blue-50 rounded-lg">
+<h4 class="text-lg font-semibold text-gray-800 mb-4">Data Siswa Per Kelas</h4>
+<div class="mb-4">
+<div class="grid md:grid-cols-3 gap-4 mb-4">
+<input class="px-4 py-3 border border-gray-300 rounded-lg" id="kelas-nama" placeholder="Nama Kelas (contoh: 1A)" type="text"/>
+<input class="px-4 py-3 border border-gray-300 rounded-lg" id="kelas-target" placeholder="Target Jumlah Siswa" type="number"/>
+<input class="px-4 py-3 border border-gray-300 rounded-lg" id="kelas-wali" placeholder="Wali Kelas" type="text"/>
+</div>
+<button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors" onclick="addKelas()">
+<i class="fas fa-plus mr-2"></i>Tambah Kelas
+                                    </button>
+</div>
+<div class="space-y-3" id="admin-kelas-list">
+<p class="text-gray-500 italic">Belum ada data kelas yang ditambahkan</p>
+</div>
+</div>
+<!-- Data Prestasi -->
+<div class="mb-8 p-6 bg-yellow-50 rounded-lg">
+<h4 class="text-lg font-semibold text-gray-800 mb-4">Data Prestasi Sekolah</h4>
+<div class="mb-4">
+<div class="grid md:grid-cols-2 gap-4 mb-4">
+<input class="px-4 py-3 border border-gray-300 rounded-lg" id="prestasi-nama" placeholder="Nama Prestasi" type="text"/>
+<input class="px-4 py-3 border border-gray-300 rounded-lg" id="prestasi-juara" placeholder="Juara (contoh: Juara 1)" type="text"/>
+<input class="px-4 py-3 border border-gray-300 rounded-lg" id="prestasi-tahun" placeholder="Tahun" type="text"/>
+<input class="px-4 py-3 border border-gray-300 rounded-lg" id="prestasi-tingkat" placeholder="Tingkat (Kecamatan/Kabupaten/Provinsi/Nasional)" type="text"/>
+</div>
+<button class="bg-yellow-600 text-white px-6 py-3 rounded-lg hover:bg-yellow-700 transition-colors" onclick="addPrestasi()">
+<i class="fas fa-plus mr-2"></i>Tambah Prestasi
+                                    </button>
+</div>
+<div class="space-y-3" id="admin-prestasi-list">
+<p class="text-gray-500 italic">Belum ada data prestasi yang ditambahkan</p>
+</div>
+</div>
+<!-- Data Sekolah -->
+<div class="mb-8 p-6 bg-purple-50 rounded-lg">
+<h4 class="text-lg font-semibold text-gray-800 mb-4">Data Sekolah &amp; Akreditasi</h4>
+<div class="space-y-4">
+<div class="grid md:grid-cols-2 gap-4">
+<div>
+<label class="block text-gray-700 font-semibold mb-2">NPSN</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="sekolah-npsn" onchange="updateDataSekolah()" placeholder="10123456" type="text"/>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Status Sekolah</label>
+<select class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="sekolah-status" onchange="updateDataSekolah()">
+<option value="">Pilih Status</option>
+<option value="Negeri">Negeri</option>
+<option value="Swasta">Swasta</option>
+</select>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-4">
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Akreditasi</label>
+<select class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="sekolah-akreditasi" onchange="updateDataSekolah()">
+<option value="">Pilih Akreditasi</option>
+<option value="A">A (Sangat Baik)</option>
+<option value="B">B (Baik)</option>
+<option value="C">C (Cukup)</option>
+</select>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Tahun Akreditasi</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="sekolah-tahun-akreditasi" onchange="updateDataSekolah()" placeholder="2023" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Upload SK Akreditasi</label>
+<input accept="image/*,.pdf" class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="sk-akreditasi-upload" onchange="uploadSKAkreditasi()" type="file"/>
+<p class="text-sm text-gray-500 mt-2">Format: JPG, PNG, PDF (Max 5MB)</p>
+</div>
+</div>
+</div>
+<!-- Program Sekolah -->
+<div class="mb-8 p-6 bg-orange-50 rounded-lg">
+<h4 class="text-lg font-semibold text-gray-800 mb-4">Program Sekolah</h4>
+<div class="mb-4">
+<div class="grid md:grid-cols-3 gap-4 mb-4">
+<input class="px-4 py-3 border border-gray-300 rounded-lg" id="program-nama" placeholder="Nama Program" type="text"/>
+<select class="px-4 py-3 border border-gray-300 rounded-lg" id="program-kategori">
+<option value="">Pilih Kategori</option>
+<option value="Rutin">Program Rutin</option>
+<option value="Pembiasaan Pagi">Pembiasaan Pagi</option>
+<option value="Ekstrakurikuler">Ekstrakurikuler</option>
+<option value="Khusus">Program Khusus</option>
+</select>
+<input class="px-4 py-3 border border-gray-300 rounded-lg" id="program-jadwal" placeholder="Jadwal/Waktu" type="text"/>
+</div>
+<textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg mb-4" id="program-deskripsi" placeholder="Deskripsi program..." rows="2"></textarea>
+<button class="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors" onclick="addProgram()">
+<i class="fas fa-plus mr-2"></i>Tambah Program
+                                    </button>
+</div>
+<div class="space-y-3" id="admin-program-list">
+<p class="text-gray-500 italic">Belum ada program yang ditambahkan</p>
+</div>
+</div>
+<div class="mb-6">
+<div class="space-y-4 mb-4">
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="info-title" placeholder="Judul Informasi" type="text"/>
+<textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="info-content" placeholder="Isi Informasi" rows="4"></textarea>
+<input accept="image/*" class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="info-photo" type="file"/>
+<p class="text-sm text-gray-500">Upload foto kegiatan (opsional)</p>
+<div class="flex items-center space-x-4">
+<label class="flex items-center">
+<input class="mr-2" id="info-important" type="checkbox"/>
+<span class="text-gray-700">Tandai sebagai pengumuman penting (akan muncul di beranda)</span>
+</label>
+</div>
+</div>
+<button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors" onclick="addInformasi()">
+<i class="fas fa-plus mr-2"></i>Tambah Informasi
+                                </button>
+</div>
+<div class="space-y-4" id="admin-informasi-list">
+<p class="text-gray-500 italic">Belum ada informasi yang ditambahkan</p>
+</div>
+</div>
+</div>
+<!-- Admin Galeri -->
+<div class="admin-section hidden" id="admin-galeri">
+<div class="bg-white rounded-2xl p-8 shadow-lg">
+<h3 class="text-2xl font-bold text-gray-800 mb-6">Kelola Galeri</h3>
+<div class="mb-6">
+<div class="space-y-4 mb-4">
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="galeri-title" placeholder="Judul Foto/Video" type="text"/>
+<input accept="image/*,video/*" class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="galeri-file" type="file"/>
+<p class="text-sm text-gray-500">Format: JPG, PNG, MP4 (Max 10MB)</p>
+</div>
+<button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors" onclick="addGaleri()">
+<i class="fas fa-plus mr-2"></i>Tambah ke Galeri
+                                </button>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="admin-galeri-list">
+<p class="col-span-full text-gray-500 italic">Belum ada foto/video yang ditambahkan</p>
+</div>
+</div>
+</div>
+<!-- Admin Guru -->
+<div class="admin-section hidden" id="admin-guru">
+<div class="bg-white rounded-2xl p-8 shadow-lg">
+<h3 class="text-2xl font-bold text-gray-800 mb-6">Kelola Guru &amp; Staf</h3>
+<div class="mb-6">
+<div class="grid md:grid-cols-2 gap-4 mb-4">
+<input class="px-4 py-3 border border-gray-300 rounded-lg" id="guru-nama" placeholder="Nama Lengkap" type="text"/>
+<input class="px-4 py-3 border border-gray-300 rounded-lg" id="guru-jabatan" placeholder="Jabatan/Mata Pelajaran" type="text"/>
+</div>
+<input accept="image/*" class="w-full px-4 py-3 border border-gray-300 rounded-lg mb-4" id="guru-foto" type="file"/>
+<button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors" onclick="addGuru()">
+<i class="fas fa-plus mr-2"></i>Tambah Guru/Staf
+                                </button>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="admin-guru-list">
+<p class="col-span-full text-gray-500 italic">Belum ada data guru &amp; staf yang ditambahkan</p>
+</div>
+</div>
+</div>
+<!-- Admin SPMB -->
+<div class="admin-section hidden" id="admin-spmb">
+<div class="bg-white rounded-2xl p-8 shadow-lg">
+<h3 class="text-2xl font-bold text-gray-800 mb-6">Kelola SPMB</h3>
+<!-- SPMB Status -->
+<div class="mb-8">
+<label class="flex items-center space-x-3">
+<input class="w-5 h-5" id="spmb-status" onchange="toggleSPMB()" type="checkbox"/>
+<span class="text-lg font-semibold text-gray-700">Buka Pendaftaran SPMB</span>
+</label>
+<p class="text-gray-500 mt-2">Centang untuk membuka pendaftaran, hapus centang untuk menutup</p>
+</div>
+<!-- SPMB Information -->
+<div class="mb-8 space-y-6">
+<h4 class="text-lg font-semibold text-gray-800 border-b pb-2">Informasi SPMB</h4>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Jadwal Pendaftaran</label>
+<div class="grid md:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm text-gray-600 mb-1">Tanggal Mulai</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="spmb-start-date" onchange="updateSPMBInfo()" type="date"/>
+</div>
+<div>
+<label class="block text-sm text-gray-600 mb-1">Tanggal Berakhir</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="spmb-end-date" onchange="updateSPMBInfo()" type="date"/>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Persyaratan Pendaftaran</label>
+<textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="spmb-requirements" onchange="updateSPMBInfo()" placeholder="Masukkan persyaratan pendaftaran..." rows="5"></textarea>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Jadwal Tes/Seleksi</label>
+<textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="spmb-test-schedule" onchange="updateSPMBInfo()" placeholder="Masukkan jadwal tes/seleksi..." rows="3"></textarea>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Biaya Pendaftaran</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="spmb-fee" onchange="updateSPMBInfo()" placeholder="Contoh: Rp 50.000" type="text"/>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Informasi Tambahan</label>
+<textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="spmb-additional-info" onchange="updateSPMBInfo()" placeholder="Informasi tambahan untuk calon siswa..." rows="4"></textarea>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Kontak Informasi</label>
+<div class="grid md:grid-cols-2 gap-4">
+<input class="px-4 py-3 border border-gray-300 rounded-lg" id="spmb-contact-phone" onchange="updateSPMBInfo()" placeholder="Nomor Telepon" type="text"/>
+<input class="px-4 py-3 border border-gray-300 rounded-lg" id="spmb-contact-email" onchange="updateSPMBInfo()" placeholder="Email" type="email"/>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 rounded-lg p-6">
+<h4 class="text-lg font-semibold text-gray-800 mb-4">Data Pendaftar</h4>
+<div class="space-y-4" id="spmb-registrants">
+<p class="text-gray-500 italic">Belum ada pendaftar</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Admin Kontak -->
+<div class="admin-section hidden" id="admin-kontak">
+<div class="bg-white rounded-2xl p-8 shadow-lg">
+<h3 class="text-2xl font-bold text-gray-800 mb-6">Kelola Kontak Sekolah</h3>
+<div class="space-y-6">
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Alamat Sekolah</label>
+<textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="school-address-input" onchange="updateContactInfo()" placeholder="Masukkan alamat lengkap sekolah..." rows="3">Jl. Pendidikan No. 123, Pandan, Kec. Pandan, Kab. Tapanuli Tengah, Sumatera Utara</textarea>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Email Sekolah</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="school-email-input" onchange="updateContactInfo()" placeholder="info@sdnegeri2pandan.sch.id" type="email" value="info@sdnegeri2pandan.sch.id"/>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2">Jam Operasional</label>
+<textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg" id="school-hours-input" onchange="updateContactInfo()" placeholder="Masukkan jam operasional..." rows="4">Senin - Jumat: 07:00 - 15:00 WIB
+Sabtu: 07:00 - 12:00 WIB
+Minggu: Tutup</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- Admin Pesan -->
+<div class="admin-section hidden" id="admin-pesan">
+<div class="bg-white rounded-2xl p-8 shadow-lg">
+<h3 class="text-2xl font-bold text-gray-800 mb-6">Pesan Masuk dari Website</h3>
+<div class="mb-6 flex justify-between items-center">
+<div class="text-sm text-gray-600">
+                                    Total Pesan: <span class="font-semibold text-blue-600" id="total-messages">0</span>
+</div>
+<button class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors text-sm" onclick="clearAllMessages()">
+<i class="fas fa-trash mr-2"></i>Hapus Semua
+                                </button>
+</div>
+<div class="space-y-4" id="messages-list">
+<div class="text-center py-12 text-gray-500">
+<i class="fas fa-envelope-open-text text-4xl mb-4"></i>
+<p class="text-lg">Belum ada pesan masuk</p>
+<p class="text-sm">Pesan dari formulir "Hubungi Kami" akan muncul di sini</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
